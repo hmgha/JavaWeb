@@ -5,6 +5,7 @@
         <meta name="Keywords" content="关键字，关键词">
         <meta name="Description" content="简介">
         <title></title>
+        <script type='text/javascript' src='js/jquery.js'></script>
         <!--css样式 层叠样式
             属性：值
             元素选择器：以标签名称来命名
@@ -20,7 +21,7 @@
                 position:relative; /*不动*/
                 width:100%;
                 height:230px;
-                border:1px solid red;
+                /* border:1px solid red; */
                 margin:100px auto;/*外边距：盒子于盒子之间的距离 取值：上下 左右*/
                 transform-style: preserve-3d; /*声明一个3d效果*/
                 perspective: 800px; /*景深：给父级使用*/
@@ -34,7 +35,7 @@
                 /*倒影：方向（下） 0 倒影与图像的距离 渐变（上）
                     rgb 三原色(0-255) a透明度（0-1）
                 */
-                transition all 0.5s linear; /*所有的动画在0.5s内执行完成 直线*/
+                /* transition all 2s linear; 所有的动画在0.5s内执行完成 直线 */
             }
             .box img:nth-child(1){left:100px;} /**/
             .box img:nth-child(2){left:300px;}
@@ -68,10 +69,9 @@
         }
         $('.box img').click(function(){
             var nIndex=$(this).index(); //获取当前操作的图片下标
-            alert(nIndex);   //显示位置
+            // alert(nIndex);   //显示位置
             for(var i=0;i<5;i++){
                 imgL[i]=imgL[i]-200*(nIndex-lIndex); //移动后的位置
-                alert(imgL[i]);
                 $('img').eq(i).css("left",imgL[i]+"px");
             }
             //添加样式
